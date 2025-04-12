@@ -49,9 +49,13 @@ export default function FAQList({
     onClickMore
 }: ConsultProps) {
     const [selectedSubTab, setSubTabValue] = useState("ALL");
+    const [expanded, setExpanded] = React.useState(null);
     const handleCategoryValueChange = (_event: React.SyntheticEvent, newValue: string) => {
         setSubTabValue(newValue);
         onChange(newValue);
+    };
+    const handleChange = (panelId) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panelId : null);
     };
 
     return (
@@ -75,7 +79,7 @@ export default function FAQList({
             {data.items.length !== 0 && <div>
                 <div className='faq-list'>
                     {data.items.map((elem) => (
-                        <Accordion key={elem.id} className="faq-list-item" sx={{ boxShadow: 'none' }}>
+                        <Accordion key={elem.id} className="faq-list-item" sx={{ boxShadow: 'none' }} expanded={expanded === elem.id} onChange={handleChange(elem.id)}>
                             <AccordionSummary>
                                 {tab === "USAGE" && <Typography className='category-name'>{elem.categoryName}</Typography>}
                                 <Typography className='category-name'>{elem.subCategoryName}</Typography>
