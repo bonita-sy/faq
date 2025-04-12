@@ -1,0 +1,90 @@
+@media (min-width: 744px) {
+  footer {
+    --font-md: 14px;
+    --font-lg: 16px;
+    --line-height: 24px;
+  }
+}
+
+footer {
+  background-color: #05141f;
+  color: #82898f;
+  padding: 0 48px;
+  position: relative;
+
+  @media (min-width: 1024px) {
+    .innerFooter {
+      align-items: center;
+    }
+  }
+
+  .innerFooter {
+    display: flex;
+    font-size: 14px;
+    height: 176px;
+    justify-content: space-between;
+    line-height: 24px;
+    margin: 0 auto;
+    max-width: 1660px;
+
+    .copyright {
+      &::before {
+        height: 56px;
+        margin-bottom: 2px;
+        background-image: url(../../../public/logo_kia.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        content: '';
+        display: block;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .util {
+        justify-content: flex-end;
+        margin-bottom: 10px;
+
+        button {
+          line-height: 24px;
+          margin-left: 24px;
+        }
+      }
+
+      address {
+        text-align: right;
+
+        span {
+          margin-left: 12px;
+        }
+      }
+    }
+
+    .util {
+      display: flex;
+
+      button {
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    address {
+      font-style: normal;
+
+      span {
+        display: inline-flex;
+
+        a {
+          margin-left: 4px;
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

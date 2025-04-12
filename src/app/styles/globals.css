@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Kia Signature Fix';
+  src: url('./KiaSignatureFixRegular.woff2') format('woff2');
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --side-padding: 48px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  overflow-y: scroll;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Kia Signature Fix', Arial, sans-serif, 'Hevetica';
+}
